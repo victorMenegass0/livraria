@@ -23,23 +23,36 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="titulo" alignment="0" max="32767" attributes="0"/>
-                  <Component id="autor" alignment="0" max="32767" attributes="0"/>
-                  <Component id="isbn" alignment="0" max="32767" attributes="0"/>
-                  <Component id="qtd_paginas" alignment="0" pref="317" max="32767" attributes="0"/>
-                  <Component id="ano" alignment="0" max="32767" attributes="0"/>
-                  <Component id="editora" alignment="0" max="32767" attributes="0"/>
-                  <Component id="valor" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="359" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="enviar" min="-2" pref="149" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="titulo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="autor" alignment="0" max="32767" attributes="0"/>
+                          <Component id="isbn" alignment="0" max="32767" attributes="0"/>
+                          <Component id="qtd_paginas" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ano" alignment="0" max="32767" attributes="0"/>
+                          <Component id="editora" alignment="0" max="32767" attributes="0"/>
+                          <Component id="valor" max="32767" attributes="0"/>
+                          <Component id="qtd_compra" pref="317" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Component id="venda" min="-2" pref="547" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="exibiçao" min="-2" pref="547" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -60,9 +73,15 @@
               <Component id="editora" min="-2" pref="33" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="valor" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="qtd_compra" min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
               <Component id="enviar" min="-2" pref="55" max="-2" attributes="0"/>
-              <EmptySpace pref="36" max="32767" attributes="0"/>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <Component id="exibiçao" min="-2" pref="41" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="venda" min="-2" pref="41" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -70,7 +89,7 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="titulo">
       <Properties>
-        <Property name="text" type="java.lang.String" value="titulo"/>
+        <Property name="text" type="java.lang.String" value="maequito"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tituloActionPerformed"/>
@@ -116,6 +135,24 @@
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="enviarActionPerformed"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="qtd_compra">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="qntdade de itens na compra"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="qtd_compraActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="venda">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="exibi&#xe7;ao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

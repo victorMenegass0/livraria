@@ -35,10 +35,13 @@ public class Interface_grafica extends javax.swing.JFrame {
         editora = new javax.swing.JTextField();
         valor = new javax.swing.JTextField();
         enviar = new javax.swing.JButton();
+        qtd_compra = new javax.swing.JTextField();
+        venda = new javax.swing.JLabel();
+        exibiçao = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        titulo.setText("titulo");
+        titulo.setText("maequito");
         titulo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tituloActionPerformed(evt);
@@ -69,25 +72,45 @@ public class Interface_grafica extends javax.swing.JFrame {
             }
         });
 
+        qtd_compra.setText("qntdade de itens na compra");
+        qtd_compra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                qtd_compraActionPerformed(evt);
+            }
+        });
+
+        venda.setText("jLabel1");
+
+        exibiçao.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(titulo)
-                    .addComponent(autor)
-                    .addComponent(isbn)
-                    .addComponent(qtd_paginas, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)
-                    .addComponent(ano)
-                    .addComponent(editora)
-                    .addComponent(valor))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(359, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
+                .addGap(100, 100, 100))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(titulo)
+                            .addComponent(autor)
+                            .addComponent(isbn)
+                            .addComponent(qtd_paginas)
+                            .addComponent(ano)
+                            .addComponent(editora)
+                            .addComponent(valor)
+                            .addComponent(qtd_compra, javax.swing.GroupLayout.DEFAULT_SIZE, 317, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(venda, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(exibiçao, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -106,9 +129,15 @@ public class Interface_grafica extends javax.swing.JFrame {
                 .addComponent(editora, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(valor, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(qtd_compra, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
                 .addComponent(enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(exibiçao, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(venda, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
 
         pack();
@@ -127,7 +156,18 @@ public class Interface_grafica extends javax.swing.JFrame {
         tr.setTitulo(titulo.getText());
         tr.setAutor(autor.getText());
         tr.setIsbn(isbn.getText());
+        tr.setQtd_pag(Integer.parseInt(qtd_paginas.getText()));
+        tr.setAno(Integer.parseInt(ano.getText()));
+        tr.setEditora(editora.getText());
+        tr.setValor(Double.parseDouble(valor.getText()));
+        
+        exibiçao.setText(tr.Exibir());
+        venda.setText(Double.toString(tr.Vender(Integer.parseInt(qtd_compra.getText()))));
     }//GEN-LAST:event_enviarActionPerformed
+
+    private void qtd_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_qtd_compraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_qtd_compraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,9 +209,12 @@ public class Interface_grafica extends javax.swing.JFrame {
     private javax.swing.JTextField autor;
     private javax.swing.JTextField editora;
     private javax.swing.JButton enviar;
+    private javax.swing.JLabel exibiçao;
     private javax.swing.JTextField isbn;
+    private javax.swing.JTextField qtd_compra;
     private javax.swing.JTextField qtd_paginas;
     private javax.swing.JTextField titulo;
     private javax.swing.JTextField valor;
+    private javax.swing.JLabel venda;
     // End of variables declaration//GEN-END:variables
 }
